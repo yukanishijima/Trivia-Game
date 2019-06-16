@@ -21,11 +21,12 @@ var correctScore = 0;
 var wrongScore = 0;
 var unanswered = 0;
 var timer = 5; 
-// var count = 0;  
+var count = 0;  
+var indexCount = count;
 
 //show question
-function showQuestion(index){
-  chosenQuestion = myQuestions[index];
+function showQuestion(num){
+  chosenQuestion = myQuestions[num];
   console.log(chosenQuestion);
 
   $("#game").show();
@@ -61,11 +62,15 @@ function decrement() {
     $("#gameAnswer").append("Correct answer is " + chosenQuestion.answer + "!");
     unanswered++;
 
-    if (count < myQuestions.length -1) {
+    console.log(indexCount);
+
+    if (indexCount < myQuestions.length -1) {  //if indexCount is 0 or 1, not 2
       //show next question after 3 sec
       setTimeout(
         function () {
-          runGame(++count); //++count is same as count + 1
+          indexCount = indexCount + 1;  //++count is same as count + 1
+          console.log(indexCount);
+          runGame(); 
         }, 3000);
       console.log("time up, next question!");
     } else {
@@ -87,6 +92,8 @@ function showResult() {
   $("#game").hide();
   $("#gameAnswer").hide();
   $("#result").show();
+
+  console.log("correctScore is: " + correctScore);
 
   var message = "";
   if (correctScore > myQuestions.length - 3 ) {  //less than 3 mistakes
@@ -122,18 +129,17 @@ function reset() {
   correctScore = 0;
   wrongScore = 0;
   unanswered = 0;
-  count = 0;
+  indexCount = count;
 
-  runGame(count);
+  runGame();
 }
 
-//run game
-function runGame(count) {
+//run question
+function runGame() {
   startTimer();
-  showQuestion(count);
-  // count = count + 1;
+  showQuestion(indexCount);
 
-  console.log("question count: " + count);
+  console.log("question count: " + indexCount);
 
   //when start button is clicked
   $(".choice").click(function () {
@@ -156,7 +162,8 @@ function runGame(count) {
       //show next question after 3 sec
       setTimeout(
         function () {
-          runGame(++count); //++count is same as count + 1
+          indexCount++;   //++count is same as count + 1
+          runGame(); 
         }, 3000);
     } else {
       //show result after 3 sec
@@ -175,7 +182,7 @@ $(document).ready(function() {
   //when start button is clicked, game starts
   $("#start").click(function() {
     $("#start").hide();
-    runGame(count);
+    runGame();
   });
 });
 
