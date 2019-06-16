@@ -4,8 +4,6 @@
 
 ### Option Two: Advanced Assignment (Timed Questions)
 
-![Advanced](Images/2-advanced.jpg)
-
 **[Click Here to Watch the demo](https://youtu.be/xhmmiRmxQ8Q)**.
 
 * You'll create a trivia game that shows only one question until the player answers it or their time runs out.
