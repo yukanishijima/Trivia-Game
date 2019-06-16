@@ -158,7 +158,7 @@ function runGame() {
     }
   
     //if there're more questions,
-    if (count < myQuestions.length -1) {
+    if (indexCount < myQuestions.length -1) {
       //show next question after 3 sec
       setTimeout(
         function () {
