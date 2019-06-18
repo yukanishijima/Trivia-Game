@@ -35,7 +35,7 @@ var myQuestions = [
     answer: "All of them"
   },
   {
-    question: "The average seven-ounce cup of coffee contains about how much caffeine?",
+    question: "The average seven-ounce cup of coffee contains about ____ caffeine?",
     choices: ["10 milligrams", "50 milligrams", "150 milligrams", "300 milligrams"],
     answer: "150 milligrams"
   },
@@ -133,7 +133,7 @@ function showResult() {
 
   var message = "";
   if (correctScore > myQuestions.length - 2 ) {  //less than 3 mistakes
-    message = "You are a keto master!";
+    message = "You are a coffee master!";
   } else if (correctScore > myQuestions.length * 0.5) {  //less than 50% mistakes
     message = "Good job!";
   } else {
