@@ -1,18 +1,53 @@
 var myQuestions = [
   {
-    question: "What is used to add spicy flavor to Sushi?",
-    choices: ["wasabi", "umami", "miso"],
-    answer: "wasabi"
+    question: "What does Espresso literally mean?",
+    choices: ["Speed it up", "To go", "Forced out", "Black and intense"],
+    answer: "Forced out"
   },
   {
-    question: "Where is Sushi originally from?",
-    choices: ["India", "Thai", "Japan"],
-    answer: "Japan"
+    question: "Which country produces the most coffee in the world?",
+    choices: ["Colombia", "Brazil", "Turkey", "Vietnam"],
+    answer: "Brazil"
   },
   {
-    question: "What is Sushi rice seasoned with?",
-    choices: ["vinegar", "soya sauce", "salt"],
-    answer: "vinegar"
+    question: "The word 'coffee' comes from the Arabic word for ___?",
+    choices: ["Fruit", "Wine", "Cocaine", "Medicine"],
+    answer: "Wine"
+  },
+  {
+    question: "How many calories of one cup of black coffee contian?",
+    choices: ["0", "1", "10", "11"],
+    answer: "1"
+  },
+  {
+    question: "Which country consumes the most coffee in the world per capita?",
+    choices: ["USA", "Italy", "Finland", "Japan"],
+    answer: "Finland"
+  },
+  {
+    question: "Coffee has more ____ than wine.",
+    choices: ["Potassium", "Vitamin", "Antioxidants", "All of them"],
+    answer: "Antioxidants"
+  },
+  {
+    question: "Drinking coffee regulary may lower your chance of ___?",
+    choices: ["Cancer", "Diabetes", "Alzheimer's", "All of them"],
+    answer: "All of them"
+  },
+  {
+    question: "The average seven-ounce cup of coffee contains about how much caffeine?",
+    choices: ["10 milligrams", "50 milligrams", "150 milligrams", "300 milligrams"],
+    answer: "150 milligrams"
+  },
+  {
+    question: "In Italy, during the 16th century coffee was banned as being ___ .",
+    choices: ["Over-stimulating", "Satanic", "Unhealthy", "Addictive"],
+    answer: "Satanic"
+  },
+  {
+    question: "What is considered a lethal dose of caffeine?",
+    choices: ["1 g", "5 g", "10 g", "50 g"],
+    answer: "10 g"
   }
 ]
 
@@ -20,7 +55,7 @@ var chosenQuestion;
 var correctScore = 0;
 var wrongScore = 0;
 var unanswered = 0;
-var timer = 5; 
+var timer = 20; 
 var count = 0;  
 var indexCount = count;
 
@@ -36,11 +71,12 @@ function showQuestion(num){
   $("#showChoices").html("<button class='choice'>" + chosenQuestion.choices[0] + "</button>");
   $("#showChoices").append("<button class='choice'>" + chosenQuestion.choices[1] + "</button>");
   $("#showChoices").append("<button class='choice'>" + chosenQuestion.choices[2] + "</button>");
+  $("#showChoices").append("<button class='choice'>" + chosenQuestion.choices[3] + "</button>");
 }
 
 //start timer
 function startTimer(){
-  timer = 5; 
+  timer = 20; 
   $("#timer").show();
   $("#timer").html("<p>Time remaining: " + timer + "</p>");
   intervalId = setInterval(decrement, 1000);
@@ -96,8 +132,8 @@ function showResult() {
   console.log("correctScore is: " + correctScore);
 
   var message = "";
-  if (correctScore > myQuestions.length - 3 ) {  //less than 3 mistakes
-    message = "You are a pro!";
+  if (correctScore > myQuestions.length - 2 ) {  //less than 3 mistakes
+    message = "You are a keto master!";
   } else if (correctScore > myQuestions.length * 0.5) {  //less than 50% mistakes
     message = "Good job!";
   } else {
