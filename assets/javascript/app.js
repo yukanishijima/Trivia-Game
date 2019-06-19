@@ -55,9 +55,8 @@ var chosenQuestion;
 var correctScore = 0;
 var wrongScore = 0;
 var unanswered = 0;
-var timer = 20; 
-var count = 0;  
-var indexCount = count;
+var timer = 2; 
+var indexCount = 0;
 
 //show question
 function showQuestion(num){
@@ -76,7 +75,7 @@ function showQuestion(num){
 
 //start timer
 function startTimer(){
-  timer = 20; 
+  timer = 2; 
   $("#timer").show();
   $("#timer").html("<p>Time remaining: " + timer + "</p>");
   intervalId = setInterval(decrement, 1000);
@@ -98,14 +97,15 @@ function decrement() {
     $("#gameAnswer").append("Correct answer is " + chosenQuestion.answer + "!");
     unanswered++;
 
-    console.log(indexCount);
+    console.log(indexCount + " from stopTimer");
 
+    //if there're more questions,
     if (indexCount < myQuestions.length -1) {  //if indexCount is 0 or 1, not 2
       //show next question after 3 sec
       setTimeout(
         function () {
           indexCount = indexCount + 1;  //++count is same as count + 1
-          console.log(indexCount);
+          console.log(indexCount + " from setTimeout");
           runGame(); 
         }, 3000);
       console.log("time up, next question!");
@@ -165,7 +165,7 @@ function reset() {
   correctScore = 0;
   wrongScore = 0;
   unanswered = 0;
-  indexCount = count;
+  indexCount = 0;
 
   runGame();
 }
@@ -175,7 +175,7 @@ function runGame() {
   startTimer();
   showQuestion(indexCount);
 
-  console.log("question count: " + indexCount);
+  console.log(indexCount + " from runGame");
 
   //when start button is clicked
   $(".choice").click(function () {
