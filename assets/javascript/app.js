@@ -55,7 +55,7 @@ var chosenQuestion;
 var correctScore = 0;
 var wrongScore = 0;
 var unanswered = 0;
-var timer = 5; 
+var timer = 15; 
 var indexCount = 0;
 
 var correctImage = "assets/images/correct.png";
@@ -80,7 +80,7 @@ function showQuestion(num){
 //start timer
 function startTimer(){
   $("#timer").show();
-  timer = 5; 
+  timer = 15; 
   $("#timer").html("<p>" + timer + "</p>");
   intervalId = setInterval(decrement, 1000);
 }
