@@ -16,8 +16,8 @@ var myQuestions = [
   },
   {
     question: "How many calories of one cup of black coffee contian?",
-    choices: ["0", "1", "10", "11"],
-    answer: "1"
+    choices: ["0 calorie", "1 calories", "10 calories", "11 calories"],
+    answer: "1 calories"
   },
   {
     question: "Which country consumes the most coffee in the world per capita?",
@@ -55,8 +55,12 @@ var chosenQuestion;
 var correctScore = 0;
 var wrongScore = 0;
 var unanswered = 0;
-var timer = 2; 
+var timer = 5; 
 var indexCount = 0;
+
+var correctImage = "assets/images/correct.png";
+var wrongImage = "assets/images/wrong.png";
+var timeisupImage = "assets/images/timeisup.png";
 
 //show question
 function showQuestion(num){
@@ -75,28 +79,26 @@ function showQuestion(num){
 
 //start timer
 function startTimer(){
-  timer = 2; 
   $("#timer").show();
-  $("#timer").html("<p>Time remaining: " + timer + "</p>");
+  timer = 5; 
+  $("#timer").html("<p>" + timer + "</p>");
   intervalId = setInterval(decrement, 1000);
 }
 //decrement timer by 1 
 function decrement() {
   timer--;
-  $("#timer").html("<p>Time remaining: " + timer + "</p>");
+  $("#timer").html("<p>" + timer + "</p>");
   console.log("time remaining: " + timer);
 
   if (timer === 0) {
     //stop timer
     stopTimer();
 
-    $("#game").hide();
+    $("#timer").hide();
     $("#gameAnswer").show();
-
-    $("#gameAnswer").html("Time is up! ");
-    $("#gameAnswer").append("Correct answer is " + chosenQuestion.answer + "!");
+    $("#gameAnswerImage").attr("src", timeisupImage);
+    $("button").prop("disabled", true).removeClass("choice");    
     unanswered++;
-
     console.log(indexCount + " from stopTimer");
 
     //if there're more questions,
@@ -141,10 +143,9 @@ function showResult() {
   }
 
   var yourMessage = $("<p>").html(message);
-  var yourCorrectScore = $("<p>").html("Correct answers: " + correctScore);
-  var yourWrongScore = $("<p>").html("Wrong answers: " + wrongScore);
-  var yourUnanswered = $("<p>").html("Unanswered: " + unanswered);
-
+  var yourCorrectScore = $("<p>Correct answers</p><p class='score'>" + correctScore + "</p>");
+  var yourWrongScore = $("<p>Wrong answers</p><p class='score'>" + wrongScore + "</p>");
+  var yourUnanswered = $("<p>Unanswered</p><p class='score'>" + unanswered + "</p>");
   var resetButton = $("<button id='restart'>").html("restart");
 
   $("#result").append(yourMessage);
@@ -177,19 +178,21 @@ function runGame() {
 
   console.log(indexCount + " from runGame");
 
-  //when start button is clicked
+  //when choice button is clicked
   $(".choice").click(function () {
     stopTimer();
-    $("#game").hide();
+    $("#timer").hide();
     $("#gameAnswer").show();
+    $("button").prop("disabled", true).removeClass("choice");
   
     //if user choice is correct/wrong,
     if ($(this).text() === chosenQuestion.answer) {
-      $("#gameAnswer").html("Correct!");
+      $("#gameAnswerImage").attr("src", correctImage);
+      $(this).addClass("correct");
       correctScore++;
     } else {
-      $("#gameAnswer").html("Wrong! ");
-      $("#gameAnswer").append("Correct answer is " + chosenQuestion.answer + "!");
+      $("#gameAnswerImage").attr("src", wrongImage);
+      $(this).addClass("wrong");
       wrongScore++;
     }
   
@@ -214,6 +217,8 @@ function runGame() {
 
 //when dom is loaded,
 $(document).ready(function() {
+  $("#gameAnswer").hide();
+  $("#result").hide();
   
   //when start button is clicked, game starts
   $("#start").click(function() {

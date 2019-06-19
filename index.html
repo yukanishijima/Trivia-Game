@@ -6,35 +6,41 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Trivia Game</title>
   <!-- css -->
-  <link ref="stylesheet" type="text/css" href="assets/css/style.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500|Pinyon+Script&display=swap" rel="stylesheet">
   <!-- jQuery -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
+
 <body>
-<header></header>
+<header>
+  <img src="assets/images/coffeequiz.png" alt="coffee cup">
+</header>
   
 <main>
 
-<h1>Trivia Game</h1>
-
-
-<button id="start">Start</button>
+<button id="start">start</button>
 
 <div id="timer"></div>
 
-<div id="game">
-<div id="showQuestion"></div>
-<div id="showChoices"></div>
+<div id="gameAnswer">
+  <img id="gameAnswerImage">
 </div>
 
-<div id="gameAnswer"></div>
+<div id="game">
+  <div id="showQuestion"></div>
+  <div id="showChoices"></div>
+</div>
 
 <div id="result"></div>
 
-
 </main>
 
-<footer></footer>
+<footer>
+  <img src="assets/images/coffeebean.jpg" alt="coffee beans">
+</footer>
+
 <!-- js -->
 <script type="text/javascript" src="assets/javascript/app.js"></script> 
 </body>

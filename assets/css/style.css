@@ -100,3 +100,153 @@ hr {
 input, select {
     vertical-align:middle;
 }
+
+
+/* global styles
+-------------------------------------- */
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* header styles
+-------------------------------------- */
+header {
+  height: 25vh;
+  text-align: center;
+}
+header img {
+  height: 25vh;
+  padding-top: 10px;
+}
+
+/* main styles
+-------------------------------------- */
+main {
+  height: 55vh;
+}
+#start {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 100;
+  font-size: 30px;
+}
+
+/* timer & getAnswer styles
+-------------------------------------- */
+#timer, #gameAnswer {
+  height: 90px;
+  padding: 10px 0;
+  text-align: center;
+  position: relative;
+}
+#timer p {
+  font-family: 'Pinyon Script', cursive;
+  font-size: 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#gameAnswerImage {
+  width: 250px;
+  height: 40px;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-5deg);
+}
+
+/* game styles
+-------------------------------------- */
+#game {
+  text-align: center;
+  width: 300px;
+  margin: 0 auto;
+}
+#showQuestion {
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1.3em;
+  margin: 0 0 20px;
+}
+button {
+  background: none;
+  border: none;
+
+  display: block;
+  margin: 2px auto;
+
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 100;
+  color: black;
+  font-size: 18px;
+  padding: 3px 15px;
+}
+.choice:hover {
+  border-radius: 20px;
+  background: rgba(220,220,220,0.5);
+}
+.correct {
+  border-radius: 20px;
+  background: rgba(173,255,47,0.5);
+}
+.wrong {
+  border: 2px solid rgba(250,128,114,0.5);
+  border-radius: 20px;
+  padding: 1px 15px;
+}
+@media screen and (min-width: 620px) {
+  #game {
+    width: 540px;
+  }
+  #showQuestion {
+    font-size: 25px;
+    font-weight: 400;
+    margin: 0 0 30px;
+  }
+  button {
+   font-size: 20px; 
+  }
+}
+
+/* result styles
+-------------------------------------- */
+#result {
+  text-align: center;
+}
+#result p {
+  margin: 5px 0;
+  font-size: 18px;
+  font-weight: 100;
+}
+#result .score {
+  font-family: 'Pinyon Script', cursive;
+}
+#result p:first-child {
+  margin: 40px 0;
+  font-size: 23px;
+  font-weight: 300;
+}
+#result button {
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  margin-top: 30px;
+}
+
+/* footer styles
+-------------------------------------- */
+footer {
+  height: 20vh;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+footer img {
+  height: 20vh;
+}
