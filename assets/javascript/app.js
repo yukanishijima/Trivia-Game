@@ -194,6 +194,11 @@ function runGame() {
       $("#gameAnswerImage").attr("src", wrongImage);
       $(this).addClass("wrong");
       wrongScore++;
+
+      //test
+      // $(".choice:contains('" + chosenQuestion.answer + "')").addClass("correct-2");
+      // console.log(chosenQuestion.answer);
+   
     }
   
     //if there're more questions,
