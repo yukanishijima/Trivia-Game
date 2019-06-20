@@ -138,13 +138,16 @@ main {
 /* timer & getAnswer styles
 -------------------------------------- */
 #timer, #gameAnswer {
-  height: 80px;
+  height: 15vh;
   padding: 10px 0;
   text-align: center;
   position: relative;
 }
 #timer p {
-  font-family: 'Pinyon Script', cursive;
+  /* font-family: 'Allura', cursive; */
+  font-family: 'Alex Brush', cursive;
+  font-weight: 100;
+  /* font-size: 35px; */
   font-size: 30px;
   position: absolute;
   top: 50%;
@@ -153,7 +156,7 @@ main {
 }
 #gameAnswerImage {
   width: 250px;
-  height: 40px;
+  height: 10vh;
 
   position: absolute;
   top: 50%;
@@ -170,9 +173,13 @@ main {
 }
 #showQuestion {
   font-size: 20px;
-  font-weight: 300;
+  font-weight: 400;
+  height: 10vh;
   line-height: 1.3em;
   margin: 0 0 25px;
+}
+#showChoices {
+  height: 25vh;
 }
 button {
   background: none;
@@ -180,6 +187,7 @@ button {
 
   display: block;
   margin: 2px auto;
+  height: 5vh;
 
   font-family: 'Montserrat', sans-serif;
   font-weight: 100;
