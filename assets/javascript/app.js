@@ -16,8 +16,8 @@ var myQuestions = [
   },
   {
     question: "How many calories of one cup of black coffee contian?",
-    choices: ["0 calorie", "1 calories", "10 calories", "11 calories"],
-    answer: "1 calories"
+    choices: ["0 calories", "1 calorie", "10 calories", "11 calories"],
+    answer: "1 calorie"
   },
   {
     question: "Which country consumes the most coffee in the world per capita?",
@@ -135,11 +135,11 @@ function showResult() {
 
   var message = "";
   if (correctScore > myQuestions.length - 2) {  //less than 3 mistakes
-    message = "You are a coffee master!";
+    message = "Excellent!<br>Espresso is running in your veins!"
   } else if (correctScore > myQuestions.length * 0.5) {  //less than 50% mistakes
-    message = "Good job!";
+    message = "Good job!<br>Your life happens over coffee!"
   } else {
-    message = "Try again!";
+    message = "Wake up with a cup of coffee!<br>And try again!";
   }
 
   var yourMessage = $("<p>").html(message);
@@ -194,11 +194,6 @@ function runGame() {
       $("#gameAnswerImage").attr("src", wrongImage);
       $(this).addClass("wrong");
       wrongScore++;
-
-      //test
-      // $(".choice:contains('" + chosenQuestion.answer + "')").addClass("correct-2");
-      // console.log(chosenQuestion.answer);
-
     }
 
     //if there're more questions,
