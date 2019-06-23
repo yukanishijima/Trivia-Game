@@ -55,7 +55,7 @@ var chosenQuestion;
 var correctScore = 0;
 var wrongScore = 0;
 var unanswered = 0;
-var timer = 15; 
+var timer = 15;
 var indexCount = 0;
 
 var correctImage = "assets/images/correct.png";
@@ -63,7 +63,7 @@ var wrongImage = "assets/images/wrong.png";
 var timeisupImage = "assets/images/timeisup.png";
 
 //show question
-function showQuestion(num){
+function showQuestion(num) {
   chosenQuestion = myQuestions[num];
   console.log(chosenQuestion);
 
@@ -78,9 +78,9 @@ function showQuestion(num){
 }
 
 //start timer
-function startTimer(){
+function startTimer() {
   $("#timer").show();
-  timer = 15; 
+  timer = 15;
   $("#timer").html("<p>" + timer + "</p>");
   intervalId = setInterval(decrement, 1000);
 }
@@ -97,30 +97,30 @@ function decrement() {
     $("#timer").hide();
     $("#gameAnswer").show();
     $("#gameAnswerImage").attr("src", timeisupImage);
-    $("button").prop("disabled", true).removeClass("choice");    
+    $("button").prop("disabled", true).removeClass("choice");
     unanswered++;
     console.log(indexCount + " from stopTimer");
 
     //if there're more questions,
-    if (indexCount < myQuestions.length -1) {  //if indexCount is 0 or 1, not 2
+    if (indexCount < myQuestions.length - 1) {  //if indexCount is 0 or 1, not 2
       //show next question after 3 sec
       setTimeout(
         function () {
           indexCount = indexCount + 1;  //++count is same as count + 1
           console.log(indexCount + " from setTimeout");
-          runGame(); 
+          runGame();
         }, 3000);
       console.log("time up, next question!");
     } else {
       //show result after 3 sec
       setTimeout(
         function () {
-          showResult(); 
-        }, 3000); 
+          showResult();
+        }, 3000);
     }
   }
 }
-function stopTimer(){
+function stopTimer() {
   clearInterval(intervalId);
 }
 
@@ -134,7 +134,7 @@ function showResult() {
   console.log("correctScore is: " + correctScore);
 
   var message = "";
-  if (correctScore > myQuestions.length - 2 ) {  //less than 3 mistakes
+  if (correctScore > myQuestions.length - 2) {  //less than 3 mistakes
     message = "You are a coffee master!";
   } else if (correctScore > myQuestions.length * 0.5) {  //less than 50% mistakes
     message = "Good job!";
@@ -155,7 +155,7 @@ function showResult() {
   $("#result").append(resetButton);
 
   //when user click restart button,
-  $("#restart").click(function(){
+  $("#restart").click(function () {
     reset();
   });
 }
@@ -184,7 +184,7 @@ function runGame() {
     $("#timer").hide();
     $("#gameAnswer").show();
     $("button").prop("disabled", true).removeClass("choice");
-  
+
     //if user choice is correct/wrong,
     if ($(this).text() === chosenQuestion.answer) {
       $("#gameAnswerImage").attr("src", correctImage);
@@ -198,37 +198,42 @@ function runGame() {
       //test
       // $(".choice:contains('" + chosenQuestion.answer + "')").addClass("correct-2");
       // console.log(chosenQuestion.answer);
-   
+
     }
-  
+
     //if there're more questions,
-    if (indexCount < myQuestions.length -1) {
+    if (indexCount < myQuestions.length - 1) {
       //show next question after 3 sec
       setTimeout(
         function () {
           indexCount++;   //++count is same as count + 1
-          runGame(); 
+          runGame();
         }, 3000);
     } else {
       //show result after 3 sec
       setTimeout(
         function () {
-          showResult(); 
-        }, 3000); 
+          showResult();
+        }, 3000);
     }
 
   });
 }
 
 //when dom is loaded,
-$(document).ready(function() {
+$(document).ready(function () {
   $("#gameAnswer").hide();
   $("#result").hide();
-  
+
   //when start button is clicked, game starts
-  $("#start").click(function() {
-    $("#start").hide();
-    runGame();
+  $("#start").click(function () {
+    $("span").addClass("height");
+    $("#start").addClass("opacity");
+    setTimeout(
+      function () {
+        $("#start").hide();
+        runGame();
+      }, 1000);
   });
 });
 
