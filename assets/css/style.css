@@ -181,18 +181,21 @@ body {
 /* header styles
 -------------------------------------- */
 header {
-  height: 26vh;
+  /* height: 26vh; */
+  height: calc(var(--vh, 1vh) * 26);
   text-align: center;
 }
 header img {
-  height: 25vh;
+  /* height: 25vh; */
+  height: calc(var(--vh, 1vh) * 25);
   padding-top: 10px;
 }
 
 /* main styles
 -------------------------------------- */
 main {
-  height: 55vh;
+  /* height: 55vh; */
+  height: calc(var(--vh, 1vh) * 55);
   position: relative;
 }
 #start {
@@ -210,7 +213,8 @@ main {
 span {
   content: "";
   width: 1px;
-  height: 20vh;
+  /* height: 20vh; */
+  height: calc(var(--vh, 1vh) * 20);
   background: black;
 
   transition: 1s;
@@ -242,7 +246,8 @@ span:last-child {
 -------------------------------------- */
 #timer,
 #gameAnswer {
-  height: 15vh;
+  /* height: 15vh; */
+  height: calc(var(--vh, 1vh) * 15);
   padding: 10px 0;
   text-align: center;
   position: relative;
@@ -260,7 +265,8 @@ span:last-child {
 }
 #gameAnswerImage {
   width: 250px;
-  height: 10vh;
+  /* height: 10vh; */
+  height: calc(var(--vh, 1vh) * 10);
 
   position: absolute;
   top: 50%;
@@ -278,12 +284,14 @@ span:last-child {
 #showQuestion {
   font-size: 20px;
   font-weight: 400;
-  height: 10vh;
+  /* height: 10vh; */
+  height: calc(var(--vh, 1vh) * 10);
   line-height: 1.3em;
   margin: 0 0 25px;
 }
 #showChoices {
-  height: 25vh;
+  /* height: 25vh; */
+  height: calc(var(--vh, 1vh) * 25);
 }
 button {
   background: none;
@@ -291,7 +299,8 @@ button {
 
   display: block;
   margin: 2px auto;
-  height: 4.5vh;
+  /* height: 4.5vh; */
+  height: calc(var(--vh, 1vh) * 4.5);
 
   font-family: "Montserrat", sans-serif;
   font-weight: 100;
@@ -335,7 +344,8 @@ button {
   font-size: 18px;
   font-weight: 100;
 
-  height: 3vh;
+  /* height: 3vh; */
+  height: calc(var(--vh, 1vh) * 3);
 }
 #result .score {
   /* font-family: 'Allura', cursive; */
@@ -346,7 +356,8 @@ button {
   font-size: 23px;
   font-weight: 300;
 
-  height: 4vh;
+  /* height: 4vh; */
+  height: calc(var(--vh, 1vh) * 4);
 }
 #result button {
   border: 1px solid rgba(0, 0, 0, 0.5);
@@ -354,18 +365,29 @@ button {
   margin-top: 30px;
   padding: 1px 15px;
 
-  height: 5vh;
+  /* height: 5vh; */
+  height: calc(var(--vh, 1vh) * 5);
+}
+@media screen and (min-width: 620px) {
+  #result p {
+    font-size: 25px;
+  }
+  #result button {
+    font-size: 25px;
+  }
 }
 
 /* footer styles
 -------------------------------------- */
 footer {
-  height: 17vh;
+  /* height: 17vh; */
+  height: calc(var(--vh, 1vh) * 17);
   position: absolute;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
 }
 footer img {
-  height: 16vh;
+  /* height: 16vh; */
+  height: calc(var(--vh, 1vh) * 16);
 }
