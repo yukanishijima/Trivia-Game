@@ -181,12 +181,12 @@ body {
 /* header styles
 -------------------------------------- */
 header {
-  /* height: 26vh; */
+  height: 26%;
   height: calc(var(--vh, 1vh) * 26);
   text-align: center;
 }
 header img {
-  /* height: 25vh; */
+  height: 25%;
   height: calc(var(--vh, 1vh) * 25);
   padding-top: 10px;
 }
@@ -194,7 +194,7 @@ header img {
 /* main styles
 -------------------------------------- */
 main {
-  /* height: 55vh; */
+  height: 55%;
   height: calc(var(--vh, 1vh) * 55);
   position: relative;
 }
@@ -213,7 +213,7 @@ main {
 span {
   content: "";
   width: 1px;
-  /* height: 20vh; */
+  height: 20%;
   height: calc(var(--vh, 1vh) * 20);
   background: black;
 
@@ -246,7 +246,7 @@ span:last-child {
 -------------------------------------- */
 #timer,
 #gameAnswer {
-  /* height: 15vh; */
+  height: 15%;
   height: calc(var(--vh, 1vh) * 15);
   padding: 10px 0;
   text-align: center;
@@ -265,7 +265,7 @@ span:last-child {
 }
 #gameAnswerImage {
   width: 250px;
-  /* height: 10vh; */
+  height: 10%;
   height: calc(var(--vh, 1vh) * 10);
 
   position: absolute;
@@ -284,13 +284,13 @@ span:last-child {
 #showQuestion {
   font-size: 20px;
   font-weight: 400;
-  /* height: 10vh; */
+  height: 10%;
   height: calc(var(--vh, 1vh) * 10);
   line-height: 1.3em;
   margin: 0 0 25px;
 }
 #showChoices {
-  /* height: 25vh; */
+  height: 25%;
   height: calc(var(--vh, 1vh) * 25);
 }
 button {
@@ -299,7 +299,7 @@ button {
 
   display: block;
   margin: 2px auto;
-  /* height: 4.5vh; */
+  height: 4.5%;
   height: calc(var(--vh, 1vh) * 4.5);
 
   font-family: "Montserrat", sans-serif;
@@ -344,7 +344,7 @@ button {
   font-size: 18px;
   font-weight: 100;
 
-  /* height: 3vh; */
+  height: 3%;
   height: calc(var(--vh, 1vh) * 3);
 }
 #result .score {
@@ -356,7 +356,7 @@ button {
   font-size: 23px;
   font-weight: 300;
 
-  /* height: 4vh; */
+  height: 4%;
   height: calc(var(--vh, 1vh) * 4);
 }
 #result button {
@@ -365,7 +365,7 @@ button {
   margin-top: 30px;
   padding: 1px 15px;
 
-  /* height: 5vh; */
+  height: 5%;
   height: calc(var(--vh, 1vh) * 5);
 }
 @media screen and (min-width: 620px) {
@@ -380,7 +380,7 @@ button {
 /* footer styles
 -------------------------------------- */
 footer {
-  /* height: 17vh; */
+  height: 17%;
   height: calc(var(--vh, 1vh) * 17);
   position: absolute;
   bottom: 0;
@@ -388,6 +388,6 @@ footer {
   transform: translateX(-50%);
 }
 footer img {
-  /* height: 16vh; */
+  height: 16%;
   height: calc(var(--vh, 1vh) * 16);
 }
