@@ -228,13 +228,13 @@ span {
 }
 span:first-child {
   position: absolute;
-  top: -22vh;
+  top: calc(var(--vh, 1vh) * -22);
   left: 50%;
   transform: translateX(-50%);
 }
 span:last-child {
   position: absolute;
-  bottom: -22vh;
+  bottom: calc(var(--vh, 1vh) * -22);
   left: 50%;
   transform: translateX(-50%);
 }
