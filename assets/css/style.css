@@ -312,10 +312,6 @@ span:last-child {
   font-size: 18px;
   padding: 2px 15px;
 }
-.choice:hover {
-  border-radius: 20px;
-  background: rgba(220, 220, 220, 0.5);
-}
 .correct {
   border-radius: 20px;
   background: rgba(173, 255, 47, 0.5);
@@ -335,6 +331,10 @@ span:last-child {
   }
   #showChoices button {
     font-size: 20px;
+  }
+  .choice:hover {
+    border-radius: 20px;
+    background: rgba(220, 220, 220, 0.5);
   }
 }
 
