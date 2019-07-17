@@ -1,18 +1,30 @@
-## Trivia Game / Javascript Assignment 2
+# Trivia Game
 
-[Live](https://yukanishijima.github.io/Trivia-Game/)  
+[Live](https://yukanishijima.github.io/trivia-game/)  
 
-### Option Two: Advanced Assignment (Timed Questions)
+Dedicated for all coffee lovers! Try this multi-choice coffee trivia game to expand your coffee knowledge. You’ve got 15 seconds to answer each question.  
 
-**[Click Here to Watch the demo](https://youtu.be/xhmmiRmxQ8Q)**.
+## Site Functionality and Features
 
-* You'll create a trivia game that shows only one question until the player answers it or their time runs out.
+- Once a user clicks the start button, a timer starts. A user has 15 seconds to answer each question.  
 
-* If the player selects the correct answer, show a screen congratulating them for choosing the right option. After a few seconds, display the next question -- do this without user input.
+- When the time runs out, the page will display the time is up. When the user selects his choice, whether the choice was correct or wrong. After 3 seconds, the page will move on to a next question.  
 
-* The scenario is similar for wrong answers and time-outs.
+- The game will track the number of correct, wrong, and unanswered answers. After the user answers all 10 questions, the page will display the result and a restart button to play again.  
 
-  * If the player runs out of time, tell the player that time's up and display the correct answer. Wait a few seconds, then show the next question.
-  * If the player chooses the wrong answer, tell the player they selected the wrong option and then display the correct answer. Wait a few seconds, then show the next question.
+- The game is fully responsive for mobile and laptop.  
 
-* On the final screen, show the number of correct answers, incorrect answers, and an option to restart the game (without reloading the page).
+## Technologies & Resources
+```
+- jQuery
+- Javascript
+ - setInterval
+ - setTimeout
+- CSS
+- HTML
+```
+## Notes
+
+- Aimed for simple yet elegant aesthetics to suit the coffee theme. 
+
+- This is a part of weekly assignments from UofT Full Stack Web Development Bootcamp 2019.
